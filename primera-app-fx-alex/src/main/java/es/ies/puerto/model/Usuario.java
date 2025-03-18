@@ -17,8 +17,6 @@ public class Usuario {
     @JsonProperty("eMail")
     private String eMail;
 
-    
-
     /**
      * Constructor vacio.
      */

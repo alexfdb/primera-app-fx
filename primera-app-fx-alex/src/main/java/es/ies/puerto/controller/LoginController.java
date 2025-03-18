@@ -15,20 +15,11 @@ import javafx.stage.Stage;
  */
 public class LoginController {
 
-    @FXML
-    private TextField textFieldUsuario;
-    
-    @FXML
-    private PasswordField textFieldPassword;
-
-    @FXML
-    private Text textFieldMensaje;
-
-    @FXML
-    private Button openRegistrarButton;
-
-    @FXML
-    private Button openRecuperarButton;
+    @FXML private TextField textFieldUsuario;
+    @FXML private PasswordField textFieldPassword;
+    @FXML private Text textFieldMensaje;
+    @FXML private Button openRegistrarButton;
+    @FXML private Button openRecuperarButton;
 
     @FXML
     protected void onLoginButtonClick() {

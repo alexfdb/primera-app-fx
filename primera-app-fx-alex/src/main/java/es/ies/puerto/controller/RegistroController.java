@@ -18,22 +18,14 @@ import javafx.stage.Stage;
 public class RegistroController extends UsuarioCrud{
     
     @FXML private TextField textFiledIngresarUsuario;
-
     @FXML private PasswordField passwordFieldIngresarPassword;
-
-    @FXML PasswordField paswordFieldRepetirPassword;
-
-    @FXML TextField textFiledIngresarNombre;
-
-    @FXML TextField textFiledIngresarEmail;
-
-    @FXML TextField textFiledRepetirEmail;
-
-    @FXML Text textMensaje;
-
-    @FXML Button buttonRegistrar;
-
-    @FXML Button openLoginButton;
+    @FXML private PasswordField paswordFieldRepetirPassword;
+    @FXML private TextField textFiledIngresarNombre;
+    @FXML private TextField textFiledIngresarEmail;
+    @FXML private TextField textFiledRepetirEmail;
+    @FXML private Text textMensaje;
+    @FXML private Button buttonRegistrar;
+    @FXML private Button openLoginButton;
 
     @FXML
     protected void buttonRegistrarClick() {

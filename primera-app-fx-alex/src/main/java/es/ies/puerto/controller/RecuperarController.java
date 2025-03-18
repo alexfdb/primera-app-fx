@@ -12,7 +12,7 @@ import javafx.stage.Stage;
  */
 public class RecuperarController {
 
-    @FXML Button openLoginButton;
+    @FXML private Button openLoginButton;
 
     @FXML
     protected void openLoginClick() {
