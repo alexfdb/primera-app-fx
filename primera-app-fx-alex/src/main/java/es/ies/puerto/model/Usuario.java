@@ -8,33 +8,27 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Usuario {
     
-    @JsonProperty("nick")
+    @JsonProperty
     private String nick;
-    @JsonProperty("contrasenia")
-    private String contrasenia;
-    @JsonProperty("nombre")
-    private String nombre;
-    @JsonProperty("eMail")
-    private String eMail;
 
-    /**
-     * Constructor vacio.
-     */
+    @JsonProperty
+    private String contrasenia;
+
+    @JsonProperty
+    private String nombre;
+
+    @JsonProperty
+    private String email;
+
+
     public Usuario() {
     }
 
-    /**
-     * Constructor general.
-     * @param nick nick del usuario.
-     * @param contrasenia contrasenia del usuario.
-     * @param nombre nombre del usuario.
-     * @param eMail eMail del usuario.
-     */
-    public Usuario(String nick, String contrasenia, String nombre, String eMail) {
+    public Usuario(String nick, String contrasenia, String nombre, String email) {
         this.nick = nick;
         this.contrasenia = contrasenia;
         this.nombre = nombre;
-        this.eMail = eMail;
+        this.email = email;
     }
 
     public String getNick() {
@@ -62,11 +56,11 @@ public class Usuario {
     }
 
     public String getEMail() {
-        return this.eMail;
+        return this.email;
     }
 
     public void setEMail(String eMail) {
-        this.eMail = eMail;
+        this.email = eMail;
     }
 
     @Override
@@ -94,5 +88,6 @@ public class Usuario {
             ", eMail='" + getEMail() + "'" +
             "}";
     }
+
     
 }

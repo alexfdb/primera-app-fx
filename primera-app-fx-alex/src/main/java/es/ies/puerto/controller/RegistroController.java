@@ -16,7 +16,7 @@ import javafx.stage.Stage;
  * @version 1.0.0
  */
 public class RegistroController extends UsuarioCrud{
-    
+
     @FXML private TextField textFiledIngresarUsuario;
     @FXML private PasswordField passwordFieldIngresarPassword;
     @FXML private PasswordField paswordFieldRepetirPassword;

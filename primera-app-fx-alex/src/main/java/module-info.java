@@ -13,4 +13,5 @@ module es.ies.puerto {
 
     opens es.ies.puerto to javafx.fxml;
     opens es.ies.puerto.controller to javafx.fxml;
+    opens es.ies.puerto.model to com.fasterxml.jackson.databind;
 }
