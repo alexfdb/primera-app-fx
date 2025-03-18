@@ -26,7 +26,6 @@ public class UsuarioCrud extends JsonUtil{
      * @return retorna true si el usuario fue agregado.
      */
     public boolean create(Usuario usuario) {
-        if(usuario == null || usuario.getEMail() == null || usuario.getEMail().isEmpty()) return false;
         if(usuarios.add(usuario)) {
             return setToJson(usuarios);
         }
@@ -39,7 +38,6 @@ public class UsuarioCrud extends JsonUtil{
      * @return retorna el usuario a mostrar.
      */
     public Usuario read(Usuario usuario) {
-        if(usuario == null || usuario.getEMail() == null || usuario.getEMail().isEmpty()) return null;
         for (Usuario u : usuarios) {
             if(usuario.equals(u)) {
                 return u;

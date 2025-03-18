@@ -1,6 +1,8 @@
 package es.ies.puerto.controller;
 
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.crud.UsuarioCrud;
+import es.ies.puerto.model.Usuario;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,35 +15,37 @@ import javafx.stage.Stage;
  * @author alexfdb
  * @version 1.0.0
  */
-public class RegistroController {
+public class RegistroController extends UsuarioCrud{
     
-    @FXML TextField textFiledUsuario;
+    @FXML private TextField textFiledIngresarUsuario;
+
+    @FXML private PasswordField passwordFieldIngresarPassword;
+
+    @FXML PasswordField paswordFieldRepetirPassword;
+
+    @FXML TextField textFiledIngresarNombre;
+
+    @FXML TextField textFiledIngresarEmail;
+
+    @FXML TextField textFiledRepetirEmail;
 
     @FXML Text textMensaje;
 
     @FXML Button buttonRegistrar;
 
-    @FXML PasswordField textFieldPassword;
-
-    @FXML PasswordField textFieldPasswordRepit;
-
     @FXML Button openLoginButton;
 
     @FXML
-    protected void onClickRegistar() {
+    protected void buttonRegistrarClick() {
 
-        if (textFieldPassword == null ||  textFieldPassword.getText().isEmpty() 
-            || textFieldPasswordRepit == null || textFieldPasswordRepit.getText().isEmpty()) {
-            textMensaje.setText("¡El password no puede ser nulo o vacio!");
-            return;
-        }
+        Usuario usuario = new Usuario(textFiledIngresarUsuario.getText(),
+                                      passwordFieldIngresarPassword.getText(),
+                                      textFiledIngresarNombre.getText(),
+                                      textFiledIngresarEmail.getText());
 
-        if (textFieldPassword.getText().equals(textFieldPasswordRepit.getText())) {
-            textMensaje.setText("¡El password es correcto");
-            return;
-        }
+        create(usuario);
 
-        textMensaje.setText("Valores no validos");
+        textMensaje.setText("Registrado correctamente");
     }
 
     @FXML

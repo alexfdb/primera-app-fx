@@ -1,15 +1,23 @@
 package es.ies.puerto.model;
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * @author alexfdb
  * @version 1.0.0
  */
 public class Usuario {
     
+    @JsonProperty("nick")
     private String nick;
+    @JsonProperty("contrasenia")
     private String contrasenia;
+    @JsonProperty("nombre")
     private String nombre;
+    @JsonProperty("eMail")
     private String eMail;
+
+    
 
     /**
      * Constructor vacio.
@@ -71,12 +79,12 @@ public class Usuario {
             return false;
         }
         Usuario usuario = (Usuario) o;
-        return Objects.equals(eMail, usuario.eMail);
+        return Objects.equals(nick, usuario.nick);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(eMail);
+        return Objects.hash(nick);
     }
 
     @Override
