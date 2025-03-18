@@ -46,4 +46,18 @@ public class UsuarioCrud extends JsonUtil{
         return null;
     }
 
+    /**
+     * Busca un email en la lista de usuarios.
+     * @param email email a buscar.
+     * @return retorna true si encontro el email.
+     */
+    public boolean serchEmail(String email) {
+        for (Usuario u : usuarios) {
+            if(u.getEMail().equals(email)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

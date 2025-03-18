@@ -21,8 +21,10 @@ public class LoginController {
     @FXML private Button openRegistrarButton;
     @FXML private Button openRecuperarButton;
 
-    @FXML
-    protected void onLoginButtonClick() {
+    /**
+     * Ejecuta el logeo.
+     */
+    @FXML protected void onLoginButtonClick() {
 
         if (textFieldUsuario== null || textFieldUsuario.getText().isEmpty() || 
             textFieldPassword == null || textFieldPassword.getText().isEmpty() ) {
@@ -32,8 +34,10 @@ public class LoginController {
 
     }
 
-    @FXML
-    protected void openRegistrarClick() {
+    /**
+     * Cambia a la pantalla de registro.
+     */
+    @FXML protected void openRegistrarClick() {
 
         try {
             Stage stage = (Stage) openRegistrarButton.getScene().getWindow();
@@ -48,8 +52,10 @@ public class LoginController {
         
     }
 
-    @FXML
-    protected void openRecuperarClick() {
+    /**
+     * Cambia a la pantalla de recuperacion.
+     */
+    @FXML protected void openRecuperarClick() {
 
         try {
             Stage stage = (Stage) openRecuperarButton.getScene().getWindow();

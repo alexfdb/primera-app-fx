@@ -27,8 +27,10 @@ public class RegistroController extends UsuarioCrud{
     @FXML private Button buttonRegistrar;
     @FXML private Button openLoginButton;
 
-    @FXML
-    protected void buttonRegistrarClick() {
+    /**
+     * Ejecuta el registro.
+     */
+    @FXML protected void buttonRegistrarClick() {
 
         Usuario usuario = new Usuario(textFiledIngresarUsuario.getText(),
                                       passwordFieldIngresarPassword.getText(),
@@ -40,8 +42,10 @@ public class RegistroController extends UsuarioCrud{
         textMensaje.setText("Registrado correctamente");
     }
 
-    @FXML
-    protected void openLoginClick() {
+    /**
+     * Cambia a la pantalla principal.
+     */
+    @FXML protected void openLoginClick() {
 
         try {
             Stage stage = (Stage) openLoginButton.getScene().getWindow();

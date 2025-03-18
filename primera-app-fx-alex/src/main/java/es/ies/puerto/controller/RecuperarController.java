@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 /**
  * @author alexfdb
@@ -12,10 +13,14 @@ import javafx.stage.Stage;
  */
 public class RecuperarController {
 
+    @FXML private TextField textFieldIngresarEmail;
+    @FXML private Button ButtonEnviar;
     @FXML private Button openLoginButton;
 
-    @FXML
-    protected void openLoginClick() {
+    /**
+     * Cambia a la pantalla principal. 
+     */
+    @FXML protected void openLoginClick() {
 
         try {
             Stage stage = (Stage) openLoginButton.getScene().getWindow();
