@@ -1,10 +1,16 @@
 package es.ies.puerto.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.controller.abstractas.AbstractController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -13,13 +19,29 @@ import javafx.stage.Stage;
  * @author alexfdb
  * @version 1.0.0
  */
-public class LoginController {
+public class LoginController extends AbstractController{
 
     @FXML private TextField textFieldUsuario;
     @FXML private PasswordField textFieldPassword;
     @FXML private Text textFieldMensaje;
     @FXML private Button openRegistrarButton;
     @FXML private Button openRecuperarButton;
+    @FXML private ComboBox comboIdioma;
+
+    @FXML 
+    public void initialize() {
+        List<String> idiomas = new ArrayList<>();
+        idiomas.add("es");
+        idiomas.add("en");
+        idiomas.add("fr");
+        comboIdioma.getItems().addAll(idiomas);
+    }
+
+    @FXML protected void cambiarIdioma() {
+        Properties properties = loadIdioma("idioma", comboIdioma.getValue().toString());
+        comboIdioma.setPromptText(properties.getProperty("comboIdioma"));
+        textFieldMensaje.setText(properties.getProperty("textFieldMensaje"));
+    }
 
     /**
      * Ejecuta el logeo.
