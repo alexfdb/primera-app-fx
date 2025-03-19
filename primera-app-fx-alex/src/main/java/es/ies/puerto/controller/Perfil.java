@@ -5,25 +5,24 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-/**
- * @author alexfdb
- * @version 1.0.0
- */
-public class RecuperarController {
 
-    @FXML private TextField textFieldIngresarEmail;
-    @FXML private Button enviarButton;
-    @FXML private Button openLoginButton;
+public class Perfil {
+
+    @FXML private Text nickText;
+    @FXML private Text contraseniaText;
+    @FXML private Text nombreText;
+    @FXML private Text emailText;
+    @FXML private Button inicioButton;
 
     /**
      * Cambia a la pantalla principal. 
      */
-    @FXML protected void openLoginClick() {
+    @FXML protected void inicioButtonClick() {
 
         try {
-            Stage stage = (Stage) openLoginButton.getScene().getWindow();
+            Stage stage = (Stage) inicioButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
             stage.setTitle("Pantalla Login");
@@ -32,7 +31,7 @@ public class RecuperarController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    
+
     }
-    
+
 }

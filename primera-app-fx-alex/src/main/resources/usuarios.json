@@ -4,5 +4,11 @@
         "contrasenia": "a",
         "nombre": "a",
         "email": "a"
+    },
+    {
+        "nick": "b",
+        "contrasenia": "b",
+        "nombre": "b",
+        "email": "b"
     }
 ]

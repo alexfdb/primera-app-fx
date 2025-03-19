@@ -47,6 +47,21 @@ public class UsuarioCrud extends JsonUtil{
     }
 
     /**
+     * Comprueba las credenciales al logearse.
+     * @param nick nick del usuario.
+     * @param password contrasenia del usuario.
+     * @return retorna true si ambos son correctos.
+     */
+    public boolean login(String nick, String password) {
+        for (Usuario u : usuarios) {
+            if(nick.equals(u.getNick()) && password.equals(u.getContrasenia())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * Busca un email en la lista de usuarios.
      * @param email email a buscar.
      * @return retorna true si encontro el email.
