@@ -51,9 +51,9 @@ public class RecuperarController extends AbstractController {
     @FXML protected void openLoginClick() {
 
         try {
-            Stage stage = (Stage) openLoginButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+            Stage stage = (Stage) openLoginButton.getScene().getWindow();
             stage.setTitle("Pantalla Login");
             stage.setScene(scene);
             stage.show();

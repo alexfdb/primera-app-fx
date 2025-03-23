@@ -74,23 +74,19 @@ public class LoginController extends AbstractController{
         Usuario usuario = usuarioCrud.login(textFieldUsuario.getText(), textFieldPassword.getText());
         if(usuario != null) {
             try {
-                Stage stage = (Stage) aceptarButton.getScene().getWindow();
                 FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("perfil.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 820, 640);
 
                 PerfilController perfilController = fxmlLoader.getController();
                 perfilController.setUsuario(usuario);
 
-                stage.setTitle("Pantalla Perfil");
+                Stage stage = (Stage) aceptarButton.getScene().getWindow();
                 stage.setScene(scene);
                 stage.show();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return;
         }
-
-        textFieldMensaje.setText("El usuario no esta registrado.");
 
     }
 
@@ -100,9 +96,9 @@ public class LoginController extends AbstractController{
     @FXML protected void openRegistrarClick() {
 
         try {
-            Stage stage = (Stage) openRegistrarButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("registro.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+            Stage stage = (Stage) openRegistrarButton.getScene().getWindow();
             stage.setTitle("Pantalla Registro");
             stage.setScene(scene);
             stage.show();
@@ -118,9 +114,9 @@ public class LoginController extends AbstractController{
     @FXML protected void openRecuperarClick() {
 
         try {
-            Stage stage = (Stage) openRecuperarButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("recuperar.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+            Stage stage = (Stage) openRecuperarButton.getScene().getWindow();
             stage.setTitle("Pantalla Recuperar");
             stage.setScene(scene);
             stage.show();

@@ -46,6 +46,9 @@ public class AbstractController {
     @FXML public Text textMensaje;
     @FXML public Button buttonRegistrar;
     
+    /**
+     * Cambia el idioma de la aplicacion
+     */
     @FXML public void cambiarIdioma() {
 
         Platform.runLater(() -> {

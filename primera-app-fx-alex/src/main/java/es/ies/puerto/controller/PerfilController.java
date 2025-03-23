@@ -49,9 +49,9 @@ public class PerfilController extends AbstractController {
     @FXML protected void inicioButtonClick() {
 
         try {
-            Stage stage = (Stage) inicioButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+            Stage stage = (Stage) inicioButton.getScene().getWindow();
             stage.setTitle("Pantalla Login");
             stage.setScene(scene);
             stage.show();
