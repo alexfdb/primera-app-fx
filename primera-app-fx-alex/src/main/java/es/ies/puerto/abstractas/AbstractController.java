@@ -20,8 +20,12 @@ public class AbstractController {
     
     @FXML public void cambiarIdioma() {
         textFieldUsuario.setPromptText(ConfigManager.ConfigProperties.getProperty("textFieldUsuario"));
-        aceptarButton.setText(ConfigManager.ConfigProperties.getProperty("aceptarButton"));
+        textFieldPassword.setPromptText(ConfigManager.ConfigProperties.getProperty("textFieldPassword"));
         textFieldMensaje.setText(ConfigManager.ConfigProperties.getProperty("textFieldMensaje"));
+        aceptarButton.setText(ConfigManager.ConfigProperties.getProperty("aceptarButton"));
+        openRegistrarButton.setText(ConfigManager.ConfigProperties.getProperty("openRegistrarButton"));
+        openRecuperarButton.setText(ConfigManager.ConfigProperties.getProperty("openRecuperarButton"));
+
     }
 
 }
