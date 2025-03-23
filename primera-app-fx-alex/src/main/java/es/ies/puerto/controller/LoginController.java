@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.config.ConfigManager;
 import es.ies.puerto.crud.UsuarioCrud;
 import es.ies.puerto.model.Usuario;
 import javafx.fxml.FXML;
@@ -30,7 +31,12 @@ public class LoginController {
     @FXML private ComboBox comboIdioma;
 
     private UsuarioCrud usuarioCrud;
+    private final String PATH = "src/main/resources/";
+    private final String FICHEROSTR= "idioma-";
 
+    /**
+     * Constructor general.
+     */
     public LoginController() {
         usuarioCrud = new UsuarioCrud();
     }
@@ -41,10 +47,25 @@ public class LoginController {
         idiomas.add("es");
         idiomas.add("en");
         comboIdioma.getItems().addAll(idiomas);
+        cargarIdioma("es");
+        cambiarIdioma();
     }
 
     @FXML protected void cambiarIdioma() {
         System.out.println();
+    }
+
+    @FXML
+    protected void seleccionarIdiomaClick() {
+        String idioma = comboIdioma.getValue().toString();
+        cargarIdioma(idioma);
+        cambiarIdioma();
+
+    }
+
+    private void cargarIdioma(String idioma) {
+        String path = PATH + FICHEROSTR + idioma + ".properties";
+        ConfigManager.ConfigProperties.setPath(path);
     }
 
     /**
