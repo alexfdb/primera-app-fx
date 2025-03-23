@@ -11,25 +11,12 @@ import es.ies.puerto.model.Usuario;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 /**
  * @author alexfdb
  * @version 1.0.0
  */
 public class LoginController extends AbstractController{
-
-    @FXML private TextField textFieldUsuario;
-    @FXML private PasswordField textFieldPassword;
-    @FXML private Text textFieldMensaje;
-    @FXML private Button aceptarButton;
-    @FXML private Button openRegistrarButton;
-    @FXML private Button openRecuperarButton;
-    @FXML private ComboBox comboIdioma;
 
     private UsuarioCrud usuarioCrud;
     private static final String PATH = "src/main/resources/";
@@ -43,7 +30,7 @@ public class LoginController extends AbstractController{
     }
 
     /**
-     * Inicializa algo
+     * Inicializar el idioma
      */
     @FXML public void initialize() {
         List<String> idiomas = new ArrayList<>();

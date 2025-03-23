@@ -12,7 +12,7 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <ComboBox fx:id="comboIdioma" onAction="#cambiarIdioma" prefWidth="150.0" promptText="Idioma" />
+   <ComboBox fx:id="comboIdioma" onAction="#seleccionarIdiomaClick" prefWidth="150.0" promptText="Idioma" />
    <TextField fx:id="textFieldUsuario" prefHeight="24.0" prefWidth="197.0" promptText="Usuario" />
    <PasswordField fx:id="textFieldPassword" promptText="Contraseña" />
     <Button fx:id="aceptarButton" alignment="TOP_CENTER" onAction="#onLoginButtonClick" prefHeight="26.0" prefWidth="163.0" text="Aceptar" textAlignment="CENTER" />

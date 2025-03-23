@@ -1,24 +1,17 @@
 package es.ies.puerto.controller;
 
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.abstractas.AbstractController;
 import es.ies.puerto.crud.UsuarioCrud;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 /**
  * @author alexfdb
  * @version 1.0.0
  */
-public class RecuperarController {
-
-    @FXML private TextField textFieldIngresarEmail;
-    @FXML private Button enviarButton;
-    @FXML private Text text;
-    @FXML private Button openLoginButton;
+public class RecuperarController extends AbstractController {
 
     UsuarioCrud usuarioCrud;
 
@@ -27,6 +20,13 @@ public class RecuperarController {
      */
     public RecuperarController(){
         this.usuarioCrud = new UsuarioCrud();
+    }
+
+    /**
+     * Inicializar el idioma
+     */
+    @FXML public void initialize(){
+        cambiarIdioma();
     }
 
     /**

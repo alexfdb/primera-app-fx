@@ -11,6 +11,7 @@ import java.io.IOException;
  * @version 1.0.0
  */
 public class PrincipalApplication extends Application {
+    
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
