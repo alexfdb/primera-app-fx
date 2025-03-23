@@ -42,8 +42,10 @@ public class LoginController extends AbstractController{
         usuarioCrud = new UsuarioCrud();
     }
 
-    @FXML 
-    public void initialize() {
+    /**
+     * Inicializa algo
+     */
+    @FXML public void initialize() {
         List<String> idiomas = new ArrayList<>();
         idiomas.add("es");
         idiomas.add("en");
@@ -52,14 +54,20 @@ public class LoginController extends AbstractController{
         cambiarIdioma();
     }
 
-    @FXML
-    protected void seleccionarIdiomaClick() {
+    /**
+     * Selecciona el idioma
+     */
+    @FXML protected void seleccionarIdiomaClick() {
         String idioma = comboIdioma.getValue().toString();
         cargarIdioma(idioma);
         cambiarIdioma();
 
     }
 
+    /**
+     * Carga el idioma
+     * @param idioma idioma a cargar
+     */
     private void cargarIdioma(String idioma) {
         String path = PATH + FICHEROSTR + idioma + ".properties";
         ConfigManager.ConfigProperties.setPath(path);
@@ -75,7 +83,6 @@ public class LoginController extends AbstractController{
                 textFieldMensaje.setText("Credenciales null o vacias");
                 return;
         }
-
 
         Usuario usuario = usuarioCrud.login(textFieldUsuario.getText(), textFieldPassword.getText());
         if(usuario != null) {
@@ -99,8 +106,6 @@ public class LoginController extends AbstractController{
         textFieldMensaje.setText("El usuario no esta registrado.");
 
     }
-
-
 
     /**
      * Cambia a la pantalla de registro.

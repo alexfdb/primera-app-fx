@@ -7,7 +7,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-
+/**
+ * @author alexfdb
+ * @version 1.0.0
+ */
 public class AbstractController {
 
     @FXML public TextField textFieldUsuario;

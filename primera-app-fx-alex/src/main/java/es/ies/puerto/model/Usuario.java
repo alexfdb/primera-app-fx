@@ -21,9 +21,19 @@ public class Usuario {
     private String email;
 
 
+    /**
+     * Constructor vacio.
+     */
     public Usuario() {
     }
 
+    /**
+     * Constructor general.
+     * @param nick nick del usuario
+     * @param contrasenia contrasenia del usuario
+     * @param nombre nombre del usuario
+     * @param email email del usuario
+     */
     public Usuario(String nick, String contrasenia, String nombre, String email) {
         this.nick = nick;
         this.contrasenia = contrasenia;
@@ -88,6 +98,5 @@ public class Usuario {
             ", eMail='" + getEMail() + "'" +
             "}";
     }
-
     
 }

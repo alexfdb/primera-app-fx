@@ -22,12 +22,17 @@ public class RecuperarController {
 
     UsuarioCrud usuarioCrud;
 
+    /**
+     * Constructor general.
+     */
     public RecuperarController(){
         this.usuarioCrud = new UsuarioCrud();
     }
 
-    @FXML
-    protected void buttonEnviarClick(){
+    /**
+     * Ejecuta el envio
+     */
+    @FXML protected void buttonEnviarClick(){
         if (textFieldIngresarEmail == null || textFieldIngresarEmail.getText().isEmpty()) {
             text.setText("¡El Email no puede ser nulo o vacio!");
             return;

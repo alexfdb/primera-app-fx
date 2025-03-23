@@ -8,7 +8,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+/**
+ * @author alexfdb
+ * @version 1.0.0
+ */
 public class PerfilController {
 
     @FXML private Text nickText;
@@ -19,11 +22,18 @@ public class PerfilController {
 
     private Usuario usuario;
 
+    /**
+     * SetUsuario
+     * @param usuario usuario
+     */
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
         cargarDatos();
     }
 
+    /**
+     * Carga datos
+     */
     private void cargarDatos(){
         if (usuario != null ) {
             nickText.setText(usuario.getNick());
