@@ -10,6 +10,6 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="100.0" />
     </padding>
    <TextField fx:id="textFieldIngresarEmail" promptText="Ingreasr Email" />
-    <Button fx:id="enviarButton" alignment="TOP_CENTER" onAction="#ButtonEnviarClick" prefHeight="26.0" prefWidth="163.0" text="Enviar" textAlignment="CENTER" />
+    <Button fx:id="enviarButton" alignment="TOP_CENTER" onAction="#buttonEnviarClick" prefHeight="26.0" prefWidth="163.0" text="Enviar" textAlignment="CENTER" />
    <Button fx:id="openLoginButton" mnemonicParsing="false" onAction="#openLoginClick" text="Open Login" />
 </VBox>

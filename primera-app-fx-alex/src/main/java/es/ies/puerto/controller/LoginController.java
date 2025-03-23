@@ -7,7 +7,6 @@ import java.util.Properties;
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.controller.abstractas.AbstractController;
 import es.ies.puerto.crud.UsuarioCrud;
-import es.ies.puerto.model.Usuario;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -42,7 +41,6 @@ public class LoginController extends AbstractController{
         List<String> idiomas = new ArrayList<>();
         idiomas.add("es");
         idiomas.add("en");
-        idiomas.add("fr");
         comboIdioma.getItems().addAll(idiomas);
     }
 
@@ -50,6 +48,7 @@ public class LoginController extends AbstractController{
         Properties properties = loadIdioma("idioma", comboIdioma.getValue().toString());
         comboIdioma.setPromptText(properties.getProperty("comboIdioma"));
         textFieldMensaje.setText(properties.getProperty("textFieldMensaje"));
+        aceptarButton.setText(properties.getProperty("aceptarButton"));
     }
 
     /**

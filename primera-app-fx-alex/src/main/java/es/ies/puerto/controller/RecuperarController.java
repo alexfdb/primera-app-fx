@@ -34,5 +34,9 @@ public class RecuperarController {
         }
     
     }
+
+    @FXML protected void buttonEnviarClick() {
+        System.out.println("");
+    }
     
 }
