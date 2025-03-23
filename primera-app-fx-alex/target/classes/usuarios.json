@@ -1,14 +1,8 @@
 [
     {
-        "nick": "a",
-        "contrasenia": "a",
-        "nombre": "a",
-        "email": "a"
-    },
-    {
-        "nick": "b",
-        "contrasenia": "b",
-        "nombre": "b",
-        "email": "b"
+        "nick": "alex",
+        "contrasenia": "123",
+        "nombre": "alexander",
+        "email": "alex@alex.alex"
     }
 ]

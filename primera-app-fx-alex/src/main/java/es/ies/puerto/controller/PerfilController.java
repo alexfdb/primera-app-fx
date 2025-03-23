@@ -1,6 +1,7 @@
 package es.ies.puerto.controller;
 
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.model.Usuario;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,6 +16,22 @@ public class PerfilController {
     @FXML private Text nombreText;
     @FXML private Text emailText;
     @FXML private Button inicioButton;
+
+    private Usuario usuario;
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+        cargarDatos();
+    }
+
+    private void cargarDatos(){
+        if (usuario != null ) {
+            nickText.setText(usuario.getNick());
+            contraseniaText.setText(usuario.getContrasenia());
+            nombreText.setText(usuario.getNombre());
+            emailText.setText(usuario.getEMail());
+        }
+    }
 
     /**
      * Cambia a la pantalla principal. 

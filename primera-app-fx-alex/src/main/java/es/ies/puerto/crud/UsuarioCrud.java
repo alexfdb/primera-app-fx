@@ -52,13 +52,13 @@ public class UsuarioCrud extends JsonUtil{
      * @param password contrasenia del usuario.
      * @return retorna true si ambos son correctos.
      */
-    public boolean login(String nick, String password) {
+    public Usuario login(String nick, String password) {
         for (Usuario u : usuarios) {
             if(nick.equals(u.getNick()) && password.equals(u.getContrasenia())) {
-                return true;
+                return u;
             }
         }
-        return false;
+        return null;
     }
 
     /**

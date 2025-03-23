@@ -2,11 +2,10 @@ package es.ies.puerto.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 import es.ies.puerto.PrincipalApplication;
-import es.ies.puerto.controller.abstractas.AbstractController;
 import es.ies.puerto.crud.UsuarioCrud;
+import es.ies.puerto.model.Usuario;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,7 +19,7 @@ import javafx.stage.Stage;
  * @author alexfdb
  * @version 1.0.0
  */
-public class LoginController extends AbstractController{
+public class LoginController {
 
     @FXML private TextField textFieldUsuario;
     @FXML private PasswordField textFieldPassword;
@@ -45,10 +44,7 @@ public class LoginController extends AbstractController{
     }
 
     @FXML protected void cambiarIdioma() {
-        Properties properties = loadIdioma("idioma", comboIdioma.getValue().toString());
-        comboIdioma.setPromptText(properties.getProperty("comboIdioma"));
-        textFieldMensaje.setText(properties.getProperty("textFieldMensaje"));
-        aceptarButton.setText(properties.getProperty("aceptarButton"));
+        System.out.println();
     }
 
     /**
@@ -62,11 +58,17 @@ public class LoginController extends AbstractController{
                 return;
         }
 
-        if(usuarioCrud.login(textFieldUsuario.getText(), textFieldPassword.getText())) {
+
+        Usuario usuario = usuarioCrud.login(textFieldUsuario.getText(), textFieldPassword.getText());
+        if(usuario != null) {
             try {
                 Stage stage = (Stage) aceptarButton.getScene().getWindow();
                 FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("perfil.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+
+                PerfilController perfilController = fxmlLoader.getController();
+                perfilController.setUsuario(usuario);
+
                 stage.setTitle("Pantalla Perfil");
                 stage.setScene(scene);
                 stage.show();
