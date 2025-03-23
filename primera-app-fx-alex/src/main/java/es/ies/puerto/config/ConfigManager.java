@@ -15,9 +15,6 @@ public class ConfigManager {
         static String path;
 
         private static final Properties properties = new Properties();
-        static {
-           
-        }
 
         /**
          * Metodo estatico para obtener una propiedad
@@ -30,7 +27,7 @@ public class ConfigManager {
             File file = new File(rutaPath);
 
             if (!file.exists() || !file.isFile()) {
-                System.out.println("Path:"+file.getAbsolutePath());
+                System.out.println("Path:" + file.getAbsolutePath());
             }
             path = rutaPath;
             try {

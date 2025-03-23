@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.abstractas.AbstractController;
 import es.ies.puerto.config.ConfigManager;
 import es.ies.puerto.crud.UsuarioCrud;
 import es.ies.puerto.model.Usuario;
@@ -20,7 +21,7 @@ import javafx.stage.Stage;
  * @author alexfdb
  * @version 1.0.0
  */
-public class LoginController {
+public class LoginController extends AbstractController{
 
     @FXML private TextField textFieldUsuario;
     @FXML private PasswordField textFieldPassword;
@@ -31,8 +32,8 @@ public class LoginController {
     @FXML private ComboBox comboIdioma;
 
     private UsuarioCrud usuarioCrud;
-    private final String PATH = "src/main/resources/";
-    private final String FICHEROSTR= "idioma-";
+    private static final String PATH = "src/main/resources/";
+    private static final String FICHEROSTR= "idioma-";
 
     /**
      * Constructor general.
@@ -49,10 +50,6 @@ public class LoginController {
         comboIdioma.getItems().addAll(idiomas);
         cargarIdioma("es");
         cambiarIdioma();
-    }
-
-    @FXML protected void cambiarIdioma() {
-        System.out.println();
     }
 
     @FXML
