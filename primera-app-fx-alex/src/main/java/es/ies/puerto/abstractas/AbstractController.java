@@ -47,7 +47,7 @@ public class AbstractController {
     @FXML public Button buttonRegistrar;
     
     /**
-     * Cambia el idioma de la aplicacion
+     * Cambia el idioma de la pantalla Login
      */
     @FXML public void cambiarIdioma() {
 
@@ -59,20 +59,44 @@ public class AbstractController {
             aceptarButton.setText(ConfigManager.ConfigProperties.getProperty("aceptarButton"));
             openRegistrarButton.setText(ConfigManager.ConfigProperties.getProperty("openRegistrarButton"));
             openRecuperarButton.setText(ConfigManager.ConfigProperties.getProperty("openRecuperarButton"));
+        });
+    }
 
+        /**
+     * Cambia el idioma de la pantalla Perfil
+     */
+    @FXML public void cambiarIdiomaPerfil() {
+
+        Platform.runLater(() -> {
             //Perfil
             nickText.setText(ConfigManager.ConfigProperties.getProperty("nickText"));
             contraseniaText.setText(ConfigManager.ConfigProperties.getProperty("contraseniaText"));
             nombreText.setText(ConfigManager.ConfigProperties.getProperty("nombreText"));
             emailText.setText(ConfigManager.ConfigProperties.getProperty("emailText"));
             inicioButton.setText(ConfigManager.ConfigProperties.getProperty("inicioButton"));
+        });
+    }
 
+    /**
+     * Cambia el idioma de la pantalla Recuperar
+     */
+    @FXML public void cambiarIdiomaRecuperar() {
+
+        Platform.runLater(() -> {
             //Recuperar
             textFieldIngresarEmail.setPromptText(ConfigManager.ConfigProperties.getProperty("textFieldIngresarEmail"));
             enviarButton.setText(ConfigManager.ConfigProperties.getProperty("enviarButton"));
             text.setText(ConfigManager.ConfigProperties.getProperty("text"));
             openLoginButton.setText(ConfigManager.ConfigProperties.getProperty("openLoginButton"));
+        });
+    }
 
+    /**
+     * Cambia el idioma de la pantalla Registro
+     */
+    @FXML public void cambiarIdiomaRegistro() {
+
+        Platform.runLater(() -> {
             //Registro
             textFiledIngresarUsuario.setPromptText(ConfigManager.ConfigProperties.getProperty("textFiledIngresarUsuario"));
             passwordFieldIngresarPassword.setPromptText(ConfigManager.ConfigProperties.getProperty("passwordFieldIngresarPassword"));
