@@ -1,4 +1,4 @@
-package es.ies.puerto.util;
+package es.ies.puerto.model;
 
 import java.io.File;
 import java.util.HashSet;
@@ -6,13 +6,11 @@ import java.util.Set;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import es.ies.puerto.model.Usuario;
 /**
  * @author alexfdb
  * @version 1.0.0
  */
-public class JsonUtil {
+public abstract class JsonUtil {
     
     private String path;
     private File file;
@@ -21,7 +19,7 @@ public class JsonUtil {
     /**
      * Constructor general.
      */
-    public JsonUtil() {
+    protected JsonUtil() {
         this.path = "src/main/resources/usuarios.json";
         this.file = new File(path);
         this.objectMapper = new ObjectMapper();
@@ -38,7 +36,7 @@ public class JsonUtil {
      * Deserializa un json en un Set.
      * @return retorna el Set resultante.
      */
-    public Set<Usuario> jsonToSet() {
+    protected Set<Usuario> jsonToSet() {
         try {
             return objectMapper.readValue(file, new TypeReference<Set<Usuario>>() {});
         } catch (Exception e) {
@@ -52,7 +50,7 @@ public class JsonUtil {
      * @param set set a serializar.
      * @return retorna true si se serializo.
      */
-    public boolean setToJson(Set<Usuario> set) {
+    protected boolean setToJson(Set<Usuario> set) {
         try {
             objectMapper.writeValue(file, set);
             return true;

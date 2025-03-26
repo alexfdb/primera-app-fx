@@ -2,8 +2,6 @@ package es.ies.puerto.model;
 
 import java.util.HashSet;
 import java.util.Set;
-
-import es.ies.puerto.util.JsonUtil;
 /**
  * @author alexfdb
  * @version 1.0.0
