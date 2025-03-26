@@ -17,16 +17,16 @@
             <Insets bottom="20.0" />
          </VBox.margin>
       </Separator>
-      <Text fx:id="nickText" strokeType="OUTSIDE" strokeWidth="0.0" text="nick" />
-      <Text fx:id="contraseniaText" strokeType="OUTSIDE" strokeWidth="0.0" text="contrasenia" />
-      <Text fx:id="nombreText" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" />
-      <Text fx:id="emailText" strokeType="OUTSIDE" strokeWidth="0.0" text="email" />
+      <Text fx:id="textUsuario" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario" />
+      <Text fx:id="textContrasenia" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" />
+      <Text fx:id="textNombre" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+      <Text fx:id="textEmail" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
       <Separator prefWidth="200.0">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>
       </Separator>
-      <Button fx:id="inicioButton" mnemonicParsing="false" onAction="#inicioButtonClick" text="Inicio">
+      <Button fx:id="buttonInicio" mnemonicParsing="false" onAction="#buttonInicioClick" text="Inicio">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>

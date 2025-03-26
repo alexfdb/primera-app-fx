@@ -14,11 +14,11 @@ import javafx.stage.Stage;
  */
 public class PerfilController {
 
-    @FXML private Text nickText;
-    @FXML private Text contraseniaText;
-    @FXML private Text nombreText;
-    @FXML private Text emailText;
-    @FXML private Button inicioButton;
+    @FXML private Text textUsuario;
+    @FXML private Text textContrasenia;
+    @FXML private Text textNombre;
+    @FXML private Text textEmail;
+    @FXML private Button buttonInicio;
 
     private Usuario usuario;
 
@@ -36,22 +36,22 @@ public class PerfilController {
      */
     private void cargarDatos(){
         if (usuario != null ) {
-            nickText.setText(usuario.getNick());
-            contraseniaText.setText(usuario.getContrasenia());
-            nombreText.setText(usuario.getNombre());
-            emailText.setText(usuario.getEMail());
+            textUsuario.setText(usuario.getNick());
+            textContrasenia.setText(usuario.getContrasenia());
+            textNombre.setText(usuario.getNombre());
+            textEmail.setText(usuario.getEMail());
         }
     }
 
     /**
      * Cambia a la pantalla principal. 
      */
-    @FXML protected void inicioButtonClick() {
+    @FXML protected void buttonInicioClick() {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 250, 400);
-            Stage stage = (Stage) inicioButton.getScene().getWindow();
+            Stage stage = (Stage) buttonInicio.getScene().getWindow();
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {

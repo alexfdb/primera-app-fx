@@ -20,7 +20,7 @@ public class LoginController {
     @FXML private TextField textFieldUsuario;
     @FXML private PasswordField passwordFieldContrasenia;
     @FXML private Text textFieldTexto;
-    @FXML private Button buttonAceptar;
+    @FXML private Button buttonEnviar;
     @FXML private Button buttonRegistrar;
     @FXML private Button buttonRecuperar;
 
@@ -36,10 +36,10 @@ public class LoginController {
     /**
      * Ejecuta el logeo.
      */
-    @FXML protected void buttonAceptarClick() {
+    @FXML protected void buttonEnviarClick() {
 
         if (textFieldUsuario== null || textFieldUsuario.getText().isEmpty() || 
-        passwordFieldContrasenia == null || passwordFieldContrasenia.getText().isEmpty() ) {
+            passwordFieldContrasenia == null || passwordFieldContrasenia.getText().isEmpty() ) {
             textFieldTexto.setText("Credenciales null o vacias");
                 return;
         }
@@ -53,7 +53,7 @@ public class LoginController {
                 PerfilController perfilController = fxmlLoader.getController();
                 perfilController.setUsuario(usuario);
 
-                Stage stage = (Stage) buttonAceptar.getScene().getWindow();
+                Stage stage = (Stage) buttonEnviar.getScene().getWindow();
                 stage.setScene(scene);
                 stage.show();
             } catch (Exception e) {
