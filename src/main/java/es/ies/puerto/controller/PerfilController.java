@@ -14,11 +14,11 @@ import javafx.stage.Stage;
  */
 public class PerfilController {
 
-    @FXML public Text nickText;
-    @FXML public Text contraseniaText;
-    @FXML public Text nombreText;
-    @FXML public Text emailText;
-    @FXML public Button inicioButton;
+    @FXML private Text nickText;
+    @FXML private Text contraseniaText;
+    @FXML private Text nombreText;
+    @FXML private Text emailText;
+    @FXML private Button inicioButton;
 
     private Usuario usuario;
 

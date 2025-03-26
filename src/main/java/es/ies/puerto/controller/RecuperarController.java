@@ -15,10 +15,10 @@ import javafx.stage.Stage;
  */
 public class RecuperarController {
 
-    @FXML public TextField textFieldIngresarEmail;
-    @FXML public Button enviarButton;
-    @FXML public Text text;
-    @FXML public Button openLoginButton;
+    @FXML private TextField textFieldIngresarEmail;
+    @FXML private Button enviarButton;
+    @FXML private Text text;
+    @FXML private Button openLoginButton;
 
     UsuarioCrud usuarioCrud;
 

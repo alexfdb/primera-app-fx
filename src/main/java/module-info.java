@@ -2,7 +2,7 @@ module es.ies.puerto {
     requires javafx.controls;
     requires javafx.fxml;
     requires org.controlsfx.controls;
-    requires javafx.graphics;
+    requires transitive javafx.graphics;
     requires com.fasterxml.jackson.databind;
 
     exports es.ies.puerto;

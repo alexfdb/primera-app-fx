@@ -1,8 +1,5 @@
 package es.ies.puerto.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.model.Usuario;
 import es.ies.puerto.model.UsuarioCrud;
@@ -10,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -21,17 +17,14 @@ import javafx.stage.Stage;
  */
 public class LoginController {
 
-    @FXML public TextField textFieldUsuario;
-    @FXML public PasswordField textFieldPassword;
-    @FXML public Text textFieldMensaje;
-    @FXML public Button aceptarButton;
-    @FXML public Button openRegistrarButton;
-    @FXML public Button openRecuperarButton;
-    @FXML public ComboBox comboIdioma;
+    @FXML private TextField textFieldUsuario;
+    @FXML private PasswordField textFieldPassword;
+    @FXML private Text textFieldMensaje;
+    @FXML private Button aceptarButton;
+    @FXML private Button openRegistrarButton;
+    @FXML private Button openRecuperarButton;
 
     private UsuarioCrud usuarioCrud;
-    private static final String PATH = "src/main/resources/";
-    private static final String FICHEROSTR= "idioma-";
 
     /**
      * Constructor general.

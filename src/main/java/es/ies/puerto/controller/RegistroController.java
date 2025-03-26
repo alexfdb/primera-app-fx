@@ -17,15 +17,15 @@ import javafx.stage.Stage;
  */
 public class RegistroController {
 
-    @FXML public TextField textFiledIngresarUsuario;
-    @FXML public PasswordField passwordFieldIngresarPassword;
-    @FXML public PasswordField paswordFieldRepetirPassword;
-    @FXML public TextField textFiledIngresarNombre;
-    @FXML public TextField textFiledIngresarEmail;
-    @FXML public TextField textFiledRepetirEmail;
-    @FXML public Text textMensaje;
-    @FXML public Button buttonRegistrar;
-    @FXML public Button openLoginButton;
+    @FXML private TextField textFiledIngresarUsuario;
+    @FXML private PasswordField passwordFieldIngresarPassword;
+    @FXML private PasswordField paswordFieldRepetirPassword;
+    @FXML private TextField textFiledIngresarNombre;
+    @FXML private TextField textFiledIngresarEmail;
+    @FXML private TextField textFiledRepetirEmail;
+    @FXML private Text textMensaje;
+    @FXML private Button buttonRegistrar;
+    @FXML private Button openLoginButton;
 
     private UsuarioCrud usuarioCrud;
 
