@@ -6,16 +6,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="498.0" prefWidth="434.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.RegistroController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="250.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.RegistroController">
    <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar" />
       <TextField fx:id="textFiledIngresarUsuario" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingresar Usuario" />
       <PasswordField fx:id="passwordFieldIngresarPassword" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingresar Password" />
       <PasswordField fx:id="paswordFieldRepetirPassword" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Repetir Password" />
-      <TextField fx:id="textFiledIngresarNombre" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingrasar Nombre" />
-      <TextField fx:id="textFiledIngresarEmail" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingrasar Email" />
-      <TextField fx:id="textFiledRepetirEmail" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Repetir Email" />
-      <Text fx:id="textMensaje" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Button fx:id="buttonRegistrar" mnemonicParsing="false" onAction="#buttonRegistrarClick" text="Registrar" />
-      <Button fx:id="openLoginButton" mnemonicParsing="false" onAction="#openLoginClick" text="Open Login" />
+      <TextField fx:id="textFiledIngresarNombre" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingresar Nombre" />
+      <TextField fx:id="textFiledIngresarEmail" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingresar Email" />
+      <Text fx:id="textMensaje" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button fx:id="buttonRegistrar" mnemonicParsing="false" onAction="#buttonRegistrarClick" text="Enviar" />
+      <Button fx:id="openLoginButton" mnemonicParsing="false" onAction="#openLoginClick" text="Inicio" />
    </children>
 </VBox>
