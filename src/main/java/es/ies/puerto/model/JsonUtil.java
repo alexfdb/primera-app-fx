@@ -1,6 +1,7 @@
 package es.ies.puerto.model;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,8 +25,11 @@ public abstract class JsonUtil {
         this.file = new File(path);
         this.objectMapper = new ObjectMapper();
         try {
-            if(!file.exists()) {
-                file.createNewFile();
+            if (!file.exists()) {
+                boolean fileCreated = file.createNewFile();
+                if (!fileCreated) {
+                    throw new IOException("Error al crear el archivo: " + path);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
