@@ -1,26 +1,26 @@
 package es.ies.puerto.controller;
 
 import es.ies.puerto.PrincipalApplication;
-import es.ies.puerto.abstractas.AbstractController;
 import es.ies.puerto.model.Usuario;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 /**
  * @author alexfdb
  * @version 1.0.0
  */
-public class PerfilController extends AbstractController {
+public class PerfilController {
+
+    @FXML public Text nickText;
+    @FXML public Text contraseniaText;
+    @FXML public Text nombreText;
+    @FXML public Text emailText;
+    @FXML public Button inicioButton;
 
     private Usuario usuario;
-
-    /**
-     * Inicializar el idioma
-     */
-    @FXML public void initialize(){
-        cambiarIdiomaPerfil();
-    }
 
     /**
      * Recibe los datos del Usuario desde el login
@@ -50,9 +50,8 @@ public class PerfilController extends AbstractController {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+            Scene scene = new Scene(fxmlLoader.load(), 250, 400);
             Stage stage = (Stage) inicioButton.getScene().getWindow();
-            stage.setTitle("Pantalla Login");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {

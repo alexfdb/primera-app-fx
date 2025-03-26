@@ -1,9 +1,8 @@
-package es.ies.puerto.crud;
+package es.ies.puerto.model;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import es.ies.puerto.model.Usuario;
 import es.ies.puerto.util.JsonUtil;
 /**
  * @author alexfdb

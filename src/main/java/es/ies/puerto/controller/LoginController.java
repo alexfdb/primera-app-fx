@@ -4,19 +4,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ies.puerto.PrincipalApplication;
-import es.ies.puerto.abstractas.AbstractController;
-import es.ies.puerto.config.ConfigManager;
-import es.ies.puerto.crud.UsuarioCrud;
 import es.ies.puerto.model.Usuario;
+import es.ies.puerto.model.UsuarioCrud;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 /**
  * @author alexfdb
  * @version 1.0.0
  */
-public class LoginController extends AbstractController{
+public class LoginController {
+
+    @FXML public TextField textFieldUsuario;
+    @FXML public PasswordField textFieldPassword;
+    @FXML public Text textFieldMensaje;
+    @FXML public Button aceptarButton;
+    @FXML public Button openRegistrarButton;
+    @FXML public Button openRecuperarButton;
+    @FXML public ComboBox comboIdioma;
 
     private UsuarioCrud usuarioCrud;
     private static final String PATH = "src/main/resources/";
@@ -27,36 +38,6 @@ public class LoginController extends AbstractController{
      */
     public LoginController() {
         usuarioCrud = new UsuarioCrud();
-    }
-
-    /**
-     * Inicializar el idioma
-     */
-    @FXML public void initialize() {
-        List<String> idiomas = new ArrayList<>();
-        idiomas.add("es");
-        idiomas.add("en");
-        comboIdioma.getItems().addAll(idiomas);
-        cargarIdioma("es");
-        cambiarIdioma();
-    }
-
-    /**
-     * Selecciona el idioma
-     */
-    @FXML protected void seleccionarIdiomaClick() {
-        String idioma = comboIdioma.getValue().toString();
-        cargarIdioma(idioma);
-        cambiarIdioma();
-    }
-
-    /**
-     * Carga el idioma
-     * @param idioma idioma a cargar
-     */
-    private void cargarIdioma(String idioma) {
-        String path = PATH + FICHEROSTR + idioma + ".properties";
-        ConfigManager.ConfigProperties.setPath(path);
     }
 
     /**
@@ -74,7 +55,7 @@ public class LoginController extends AbstractController{
         if(usuario != null) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("perfil.fxml"));
-                Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+                Scene scene = new Scene(fxmlLoader.load(), 250, 400);
 
                 PerfilController perfilController = fxmlLoader.getController();
                 perfilController.setUsuario(usuario);
@@ -96,9 +77,8 @@ public class LoginController extends AbstractController{
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("registro.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+            Scene scene = new Scene(fxmlLoader.load(), 250, 400);
             Stage stage = (Stage) openRegistrarButton.getScene().getWindow();
-            stage.setTitle("Pantalla Registro");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
@@ -114,9 +94,8 @@ public class LoginController extends AbstractController{
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("recuperar.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+            Scene scene = new Scene(fxmlLoader.load(), 250, 400);
             Stage stage = (Stage) openRecuperarButton.getScene().getWindow();
-            stage.setTitle("Pantalla Recuperar");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {

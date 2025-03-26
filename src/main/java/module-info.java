@@ -6,10 +6,7 @@ module es.ies.puerto {
     requires com.fasterxml.jackson.databind;
 
     exports es.ies.puerto;
-    exports es.ies.puerto.config;
-    exports es.ies.puerto.abstractas;
     exports es.ies.puerto.controller;
-    exports es.ies.puerto.crud;
     exports es.ies.puerto.model;
     exports es.ies.puerto.util;
 
