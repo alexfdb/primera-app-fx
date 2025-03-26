@@ -16,9 +16,9 @@ import javafx.stage.Stage;
 public class RecuperarController {
 
     @FXML private TextField textFieldIngresarEmail;
-    @FXML private Button enviarButton;
-    @FXML private Text text;
-    @FXML private Button openLoginButton;
+    @FXML private Button buttonEnviar;
+    @FXML private Text textText;
+    @FXML private Button buttonInicio;
 
     UsuarioCrud usuarioCrud;
 
@@ -34,26 +34,26 @@ public class RecuperarController {
      */
     @FXML protected void buttonEnviarClick(){
         if (textFieldIngresarEmail == null || textFieldIngresarEmail.getText().isEmpty()) {
-            text.setText("¡El Email no puede ser nulo o vacio!");
+            textText.setText("¡El Email no puede ser nulo o vacio!");
             return;
         }
 
         if (!usuarioCrud.serchEmail(textFieldIngresarEmail.getText())) {
-            text.setText("El correo electrónico no es válido o no esta registrado.");
+            textText.setText("El correo electrónico no es válido o no esta registrado.");
             return;
         }
-        text.setText("¡Mensaje enviado!, revisa el email");
+        textText.setText("¡Mensaje enviado!, revisa el email");
     }
 
     /**
      * Cambia a la pantalla principal. 
      */
-    @FXML protected void openLoginClick() {
+    @FXML protected void buttonInicioClick() {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 250, 400);
-            Stage stage = (Stage) openLoginButton.getScene().getWindow();
+            Stage stage = (Stage) buttonInicio.getScene().getWindow();
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {

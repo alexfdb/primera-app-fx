@@ -19,12 +19,12 @@
    </Separator>
    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ingresar Email" />
    <TextField fx:id="textFieldIngresarEmail" promptText="Ingresar Email" />
-   <Text fx:id="text" strokeType="OUTSIDE" strokeWidth="0.0" />
-    <Button fx:id="enviarButton" alignment="TOP_CENTER" onAction="#buttonEnviarClick" text="Enviar" textAlignment="CENTER" />
+   <Text fx:id="textText" strokeType="OUTSIDE" strokeWidth="0.0" />
+    <Button fx:id="buttonEnviar" alignment="TOP_CENTER" onAction="#buttonEnviarClick" text="Enviar" textAlignment="CENTER" />
    <Separator prefWidth="200.0">
       <VBox.margin>
          <Insets bottom="20.0" top="20.0" />
       </VBox.margin>
    </Separator>
-   <Button fx:id="openLoginButton" mnemonicParsing="false" onAction="#openLoginClick" text="Inicio" />
+   <Button fx:id="buttonInicio" mnemonicParsing="false" onAction="#buttonInicioClick" text="Inicio" />
 </VBox>
