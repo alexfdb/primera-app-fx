@@ -83,12 +83,12 @@ public class Usuario {
             return false;
         }
         Usuario usuario = (Usuario) o;
-        return Objects.equals(nick, usuario.nick);
+        return Objects.equals(email, usuario.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nick);
+        return Objects.hash(email);
     }
 
     @Override

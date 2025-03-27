@@ -59,6 +59,9 @@ public abstract class JsonUtil {
      * @return retorna true si se serializo.
      */
     protected boolean setToJson(Set<Usuario> set) {
+        if (set == null) {
+            return false;
+        }
         try {
             objectMapper.writeValue(file, set);
             return true;

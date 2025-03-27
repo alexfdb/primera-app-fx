@@ -25,6 +25,9 @@ public class UsuarioCrud extends JsonUtil {
      * @return retorna true si el usuario fue agregado.
      */
     public boolean create(Usuario usuario) {
+        if (usuario == null || usuario.getEMail() == null || usuario.getEMail().isBlank()) {
+            return false;
+        }
         if (usuarios.add(usuario)) {
             return setToJson(usuarios);
         }
@@ -38,6 +41,9 @@ public class UsuarioCrud extends JsonUtil {
      * @return retorna el usuario a mostrar.
      */
     public Usuario read(Usuario usuario) {
+        if (usuario == null || usuario.getEMail() == null || usuario.getEMail().isBlank()) {
+            return null;
+        }
         for (Usuario u : usuarios) {
             if (usuario.equals(u)) {
                 return u;
@@ -53,9 +59,12 @@ public class UsuarioCrud extends JsonUtil {
      * @param password contrasenia del usuario.
      * @return retorna true si ambos son correctos.
      */
-    public Usuario login(String nick, String password) {
+    public Usuario login(String nick, String contrasenia) {
+        if (nick == null || nick.isBlank() || contrasenia == null || contrasenia.isBlank()) {
+            return null;
+        }
         for (Usuario u : usuarios) {
-            if (nick.equals(u.getNick()) && password.equals(u.getContrasenia())) {
+            if (nick.equals(u.getNick()) && contrasenia.equals(u.getContrasenia())) {
                 return u;
             }
         }
@@ -69,6 +78,9 @@ public class UsuarioCrud extends JsonUtil {
      * @return retorna true si encontro el email.
      */
     public boolean serchEmail(String email) {
+        if (email == null || email.isBlank()) {
+            return false;
+        }
         for (Usuario u : usuarios) {
             if (u.getEMail().equals(email)) {
                 return true;
