@@ -47,32 +47,16 @@ public class Usuario {
         return this.nick;
     }
 
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
-
     public String getContrasenia() {
         return this.contrasenia;
-    }
-
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
     }
 
     public String getNombre() {
         return this.nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getEMail() {
         return this.email;
-    }
-
-    public void setEMail(String eMail) {
-        this.email = eMail;
     }
 
     @Override
