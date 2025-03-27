@@ -29,11 +29,14 @@ public class PerfilController {
     private Usuario usuario;
 
     /**
-     * Recibe los datos del Usuario desde el login
+     * Recibe los datos del Usuario desde el Inicio
      * 
-     * @param usuario usuario validado
+     * @param usuario usuario validado.
      */
     public void setUsuario(Usuario usuario) {
+        if(usuario == null) {
+            return;
+        }
         this.usuario = usuario;
         cargarDatos();
     }
@@ -57,7 +60,7 @@ public class PerfilController {
     protected void buttonInicioClick() {
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("inicio.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 250, 400);
             Stage stage = (Stage) buttonInicio.getScene().getWindow();
             stage.setScene(scene);

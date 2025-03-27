@@ -16,7 +16,7 @@ import javafx.stage.Stage;
  * @author alexfdb
  * @version 1.0.0
  */
-public class LoginController {
+public class InicioController {
 
     @FXML
     private TextField textFieldUsuario;
@@ -36,18 +36,18 @@ public class LoginController {
     /**
      * Constructor general.
      */
-    public LoginController() {
+    public InicioController() {
         usuarioCrud = new UsuarioCrud();
     }
 
     /**
-     * Ejecuta el logeo.
+     * Iniciar sesion.
      */
     @FXML
     protected void buttonEnviarClick() {
 
-        if (textFieldUsuario == null || textFieldUsuario.getText().isEmpty() ||
-                passwordFieldContrasenia == null || passwordFieldContrasenia.getText().isEmpty()) {
+        if (textFieldUsuario == null || textFieldUsuario.getText().isBlank() ||
+                passwordFieldContrasenia == null || passwordFieldContrasenia.getText().isBlank()) {
             textFieldTexto.setText("Credenciales null o vacias");
             return;
         }

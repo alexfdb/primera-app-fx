@@ -39,7 +39,7 @@ public class RecuperarController {
      */
     @FXML
     protected void buttonEnviarClick() {
-        if (textFieldIngresarEmail == null || textFieldIngresarEmail.getText().isEmpty()) {
+        if (textFieldIngresarEmail == null || textFieldIngresarEmail.getText().isBlank()) {
             textText.setText("¡El Email no puede ser nulo o vacio!");
             return;
         }
@@ -58,7 +58,7 @@ public class RecuperarController {
     protected void buttonInicioClick() {
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("inicio.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 250, 400);
             Stage stage = (Stage) buttonInicio.getScene().getWindow();
             stage.setScene(scene);
