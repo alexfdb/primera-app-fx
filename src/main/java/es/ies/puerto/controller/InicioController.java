@@ -23,7 +23,7 @@ public class InicioController {
     @FXML
     private PasswordField passwordFieldContrasenia;
     @FXML
-    private Text textFieldTexto;
+    private Text textText;
     @FXML
     private Button buttonEnviar;
     @FXML
@@ -48,7 +48,7 @@ public class InicioController {
 
         if (textFieldUsuario == null || textFieldUsuario.getText().isBlank() ||
                 passwordFieldContrasenia == null || passwordFieldContrasenia.getText().isBlank()) {
-            textFieldTexto.setText("Credenciales null o vacias");
+            textText.setText("Credenciales null o vacias");
             return;
         }
 
