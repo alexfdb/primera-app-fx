@@ -2,12 +2,13 @@ package es.ies.puerto.model;
 
 import java.util.HashSet;
 import java.util.Set;
+
 /**
  * @author alexfdb
  * @version 1.0.0
  */
-public class UsuarioCrud extends JsonUtil{
-    
+public class UsuarioCrud extends JsonUtil {
+
     private Set<Usuario> usuarios;
 
     /**
@@ -19,11 +20,12 @@ public class UsuarioCrud extends JsonUtil{
 
     /**
      * Agrega un nuevo usuario a la lista y lo inserta en el json.
+     * 
      * @param usuario usuario a agregar a la lista.
      * @return retorna true si el usuario fue agregado.
      */
     public boolean create(Usuario usuario) {
-        if(usuarios.add(usuario)) {
+        if (usuarios.add(usuario)) {
             return setToJson(usuarios);
         }
         return false;
@@ -31,12 +33,13 @@ public class UsuarioCrud extends JsonUtil{
 
     /**
      * Muestra un usuario de la lista.
+     * 
      * @param usuario usuario a mostrar.
      * @return retorna el usuario a mostrar.
      */
     public Usuario read(Usuario usuario) {
         for (Usuario u : usuarios) {
-            if(usuario.equals(u)) {
+            if (usuario.equals(u)) {
                 return u;
             }
         }
@@ -45,13 +48,14 @@ public class UsuarioCrud extends JsonUtil{
 
     /**
      * Comprueba las credenciales al logearse.
-     * @param nick nick del usuario.
+     * 
+     * @param nick     nick del usuario.
      * @param password contrasenia del usuario.
      * @return retorna true si ambos son correctos.
      */
     public Usuario login(String nick, String password) {
         for (Usuario u : usuarios) {
-            if(nick.equals(u.getNick()) && password.equals(u.getContrasenia())) {
+            if (nick.equals(u.getNick()) && password.equals(u.getContrasenia())) {
                 return u;
             }
         }
@@ -60,12 +64,13 @@ public class UsuarioCrud extends JsonUtil{
 
     /**
      * Busca un email en la lista de usuarios.
+     * 
      * @param email email a buscar.
      * @return retorna true si encontro el email.
      */
     public boolean serchEmail(String email) {
         for (Usuario u : usuarios) {
-            if(u.getEMail().equals(email)) {
+            if (u.getEMail().equals(email)) {
                 return true;
             }
         }

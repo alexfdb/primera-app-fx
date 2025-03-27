@@ -1,13 +1,15 @@
 package es.ies.puerto.model;
+
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * @author alexfdb
  * @version 1.0.0
  */
 public class Usuario {
-    
+
     @JsonProperty
     private String nick;
 
@@ -20,7 +22,6 @@ public class Usuario {
     @JsonProperty
     private String email;
 
-
     /**
      * Constructor vacio.
      */
@@ -29,10 +30,11 @@ public class Usuario {
 
     /**
      * Constructor general.
-     * @param nick nick del usuario
+     * 
+     * @param nick        nick del usuario
      * @param contrasenia contrasenia del usuario
-     * @param nombre nombre del usuario
-     * @param email email del usuario
+     * @param nombre      nombre del usuario
+     * @param email       email del usuario
      */
     public Usuario(String nick, String contrasenia, String nombre, String email) {
         this.nick = nick;
@@ -92,11 +94,11 @@ public class Usuario {
     @Override
     public String toString() {
         return "{" +
-            " nick='" + getNick() + "'" +
-            ", contrasenia='" + getContrasenia() + "'" +
-            ", nombre='" + getNombre() + "'" +
-            ", eMail='" + getEMail() + "'" +
-            "}";
+                " nick='" + getNick() + "'" +
+                ", contrasenia='" + getContrasenia() + "'" +
+                ", nombre='" + getNombre() + "'" +
+                ", eMail='" + getEMail() + "'" +
+                "}";
     }
-    
+
 }

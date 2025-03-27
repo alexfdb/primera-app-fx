@@ -11,18 +11,25 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 /**
  * @author alexfdb
  * @version 1.0.0
  */
 public class LoginController {
 
-    @FXML private TextField textFieldUsuario;
-    @FXML private PasswordField passwordFieldContrasenia;
-    @FXML private Text textFieldTexto;
-    @FXML private Button buttonEnviar;
-    @FXML private Button buttonRegistrar;
-    @FXML private Button buttonRecuperar;
+    @FXML
+    private TextField textFieldUsuario;
+    @FXML
+    private PasswordField passwordFieldContrasenia;
+    @FXML
+    private Text textFieldTexto;
+    @FXML
+    private Button buttonEnviar;
+    @FXML
+    private Button buttonRegistrar;
+    @FXML
+    private Button buttonRecuperar;
 
     private UsuarioCrud usuarioCrud;
 
@@ -36,16 +43,17 @@ public class LoginController {
     /**
      * Ejecuta el logeo.
      */
-    @FXML protected void buttonEnviarClick() {
+    @FXML
+    protected void buttonEnviarClick() {
 
-        if (textFieldUsuario== null || textFieldUsuario.getText().isEmpty() || 
-            passwordFieldContrasenia == null || passwordFieldContrasenia.getText().isEmpty() ) {
+        if (textFieldUsuario == null || textFieldUsuario.getText().isEmpty() ||
+                passwordFieldContrasenia == null || passwordFieldContrasenia.getText().isEmpty()) {
             textFieldTexto.setText("Credenciales null o vacias");
-                return;
+            return;
         }
 
         Usuario usuario = usuarioCrud.login(textFieldUsuario.getText(), passwordFieldContrasenia.getText());
-        if(usuario != null) {
+        if (usuario != null) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("perfil.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 250, 400);
@@ -66,7 +74,8 @@ public class LoginController {
     /**
      * Cambia a la pantalla de registro.
      */
-    @FXML protected void buttonRegistrarClick() {
+    @FXML
+    protected void buttonRegistrarClick() {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("registro.fxml"));
@@ -77,13 +86,14 @@ public class LoginController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }
 
     /**
      * Cambia a la pantalla de recuperacion.
      */
-    @FXML protected void buttonRecuperarClick() {
+    @FXML
+    protected void buttonRecuperarClick() {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("recuperar.fxml"));
@@ -94,7 +104,7 @@ public class LoginController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }
-    
+
 }

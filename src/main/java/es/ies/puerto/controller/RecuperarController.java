@@ -9,30 +9,36 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 /**
  * @author alexfdb
  * @version 1.0.0
  */
 public class RecuperarController {
 
-    @FXML private TextField textFieldIngresarEmail;
-    @FXML private Button buttonEnviar;
-    @FXML private Text textText;
-    @FXML private Button buttonInicio;
+    @FXML
+    private TextField textFieldIngresarEmail;
+    @FXML
+    private Button buttonEnviar;
+    @FXML
+    private Text textText;
+    @FXML
+    private Button buttonInicio;
 
     UsuarioCrud usuarioCrud;
 
     /**
      * Constructor general.
      */
-    public RecuperarController(){
+    public RecuperarController() {
         this.usuarioCrud = new UsuarioCrud();
     }
 
     /**
      * Ejecuta el envio
      */
-    @FXML protected void buttonEnviarClick(){
+    @FXML
+    protected void buttonEnviarClick() {
         if (textFieldIngresarEmail == null || textFieldIngresarEmail.getText().isEmpty()) {
             textText.setText("¡El Email no puede ser nulo o vacio!");
             return;
@@ -46,9 +52,10 @@ public class RecuperarController {
     }
 
     /**
-     * Cambia a la pantalla principal. 
+     * Cambia a la pantalla principal.
      */
-    @FXML protected void buttonInicioClick() {
+    @FXML
+    protected void buttonInicioClick() {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
@@ -59,7 +66,7 @@ public class RecuperarController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    
+
     }
-    
+
 }

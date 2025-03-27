@@ -8,22 +8,29 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 /**
  * @author alexfdb
  * @version 1.0.0
  */
 public class PerfilController {
 
-    @FXML private Text textUsuario;
-    @FXML private Text textContrasenia;
-    @FXML private Text textNombre;
-    @FXML private Text textEmail;
-    @FXML private Button buttonInicio;
+    @FXML
+    private Text textUsuario;
+    @FXML
+    private Text textContrasenia;
+    @FXML
+    private Text textNombre;
+    @FXML
+    private Text textEmail;
+    @FXML
+    private Button buttonInicio;
 
     private Usuario usuario;
 
     /**
      * Recibe los datos del Usuario desde el login
+     * 
      * @param usuario usuario validado
      */
     public void setUsuario(Usuario usuario) {
@@ -34,8 +41,8 @@ public class PerfilController {
     /**
      * Carga datos
      */
-    private void cargarDatos(){
-        if (usuario != null ) {
+    private void cargarDatos() {
+        if (usuario != null) {
             textUsuario.setText(usuario.getNick());
             textContrasenia.setText(usuario.getContrasenia());
             textNombre.setText(usuario.getNombre());
@@ -44,9 +51,10 @@ public class PerfilController {
     }
 
     /**
-     * Cambia a la pantalla principal. 
+     * Cambia a la pantalla principal.
      */
-    @FXML protected void buttonInicioClick() {
+    @FXML
+    protected void buttonInicioClick() {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));

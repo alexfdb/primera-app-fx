@@ -6,12 +6,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
 /**
  * @author alexfdb
  * @version 1.0.0
  */
 public class PrincipalApplication extends Application {
-    
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
@@ -23,5 +24,5 @@ public class PrincipalApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
-    
+
 }

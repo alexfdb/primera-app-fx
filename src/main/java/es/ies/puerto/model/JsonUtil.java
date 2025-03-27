@@ -7,12 +7,13 @@ import java.util.Set;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 /**
  * @author alexfdb
  * @version 1.0.0
  */
 public abstract class JsonUtil {
-    
+
     private String path;
     private File file;
     private ObjectMapper objectMapper;
@@ -38,11 +39,13 @@ public abstract class JsonUtil {
 
     /**
      * Deserializa un json en un Set.
+     * 
      * @return retorna el Set resultante.
      */
     protected Set<Usuario> jsonToSet() {
         try {
-            return objectMapper.readValue(file, new TypeReference<Set<Usuario>>() {});
+            return objectMapper.readValue(file, new TypeReference<Set<Usuario>>() {
+            });
         } catch (Exception e) {
             e.printStackTrace();
             return new HashSet<>();
@@ -51,6 +54,7 @@ public abstract class JsonUtil {
 
     /**
      * Serializa un Set en un json.
+     * 
      * @param set set a serializar.
      * @return retorna true si se serializo.
      */
