@@ -1,1 +1,8 @@
-[{"nick":"alex","contrasenia":"123","nombre":"alexander","email":"alex@alex.alex"},{"nick":"","contrasenia":"","nombre":"","email":""}]
+[
+    {
+        "nick": "alex",
+        "contrasenia": "123",
+        "nombre": "alexander",
+        "email": "alex@alex.alex"
+    }
+]

@@ -10,12 +10,12 @@
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar" />
       <TextField fx:id="textFiledIngresarUsuario" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingresar Usuario" />
-      <PasswordField fx:id="passwordFieldIngresarPassword" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingresar Password" />
-      <PasswordField fx:id="paswordFieldRepetirPassword" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Repetir Password" />
+      <PasswordField fx:id="passwordFieldIngresarContrasenia" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingresar Password" />
+      <PasswordField fx:id="paswordFieldRepetirContrasenia" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Repetir Password" />
       <TextField fx:id="textFiledIngresarNombre" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingresar Nombre" />
       <TextField fx:id="textFiledIngresarEmail" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingresar Email" />
-      <Text fx:id="textMensaje" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <Button fx:id="buttonRegistrar" mnemonicParsing="false" onAction="#buttonRegistrarClick" text="Enviar" />
-      <Button fx:id="openLoginButton" mnemonicParsing="false" onAction="#openLoginClick" text="Inicio" />
+      <Text fx:id="textText" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button fx:id="buttonEnviar" mnemonicParsing="false" onAction="#buttonEnviarClick" text="Enviar" />
+      <Button fx:id="buttonInicio" mnemonicParsing="false" onAction="#buttonInicioClick" text="Inicio" />
    </children>
 </VBox>
