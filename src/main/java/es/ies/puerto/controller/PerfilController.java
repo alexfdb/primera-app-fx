@@ -34,7 +34,7 @@ public class PerfilController {
      * @param usuario usuario validado.
      */
     public void setUsuario(Usuario usuario) {
-        if(usuario == null) {
+        if (usuario == null) {
             return;
         }
         this.usuario = usuario;

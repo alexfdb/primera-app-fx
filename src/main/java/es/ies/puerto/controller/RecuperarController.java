@@ -1,5 +1,8 @@
 package es.ies.puerto.controller;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.model.UsuarioCrud;
 import javafx.fxml.FXML;
@@ -44,11 +47,29 @@ public class RecuperarController {
             return;
         }
 
+        if (!validarEmail(textFieldIngresarEmail.getText())) {
+            textText.setText("El correo electrónico no es válido");
+            return;
+        }
+
         if (!usuarioCrud.serchEmail(textFieldIngresarEmail.getText())) {
-            textText.setText("El correo electrónico no es válido o no esta registrado.");
+            textText.setText("El correo electrónico no esta registrado.");
             return;
         }
         textText.setText("¡Mensaje enviado!, revisa el email");
+    }
+
+    /**
+     * Valida el formato del email.
+     * 
+     * @param email El email a validar.
+     * @return true si el formato es válido, false en caso contrario.
+     */
+    private boolean validarEmail(String email) {
+        String patron = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        Pattern pattern = Pattern.compile(patron);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
     /**

@@ -52,7 +52,7 @@ public class RegistroController {
      */
     @FXML
     protected void buttonEnviarClick() {
-        if(!validarCampos()) {
+        if (!validarCampos()) {
             textText.setText("Credenciales null o vacias");
             return;
         }
@@ -78,23 +78,24 @@ public class RegistroController {
 
     /**
      * Valida los campos del registro.
+     * 
      * @return retorna true si los campos fueron validados.
      */
     private boolean validarCampos() {
         if (textFiledIngresarUsuario == null || textFiledIngresarUsuario.getText().isBlank() ||
-            passwordFieldIngresarContrasenia == null || passwordFieldIngresarContrasenia.getText().isBlank() ||
-            paswordFieldRepetirContrasenia == null || paswordFieldRepetirContrasenia.getText().isBlank() ||
-            textFiledIngresarNombre == null || textFiledIngresarNombre.getText().isBlank() ||
-            textFiledIngresarEmail == null || textFiledIngresarEmail.getText().isBlank()) {
+                passwordFieldIngresarContrasenia == null || passwordFieldIngresarContrasenia.getText().isBlank() ||
+                paswordFieldRepetirContrasenia == null || paswordFieldRepetirContrasenia.getText().isBlank() ||
+                textFiledIngresarNombre == null || textFiledIngresarNombre.getText().isBlank() ||
+                textFiledIngresarEmail == null || textFiledIngresarEmail.getText().isBlank()) {
             textText.setText("Credenciales null o vacias");
             return false;
         }
         return true;
     }
 
-
     /**
      * Valida el formato del email.
+     * 
      * @param email El email a validar.
      * @return true si el formato es válido, false en caso contrario.
      */
