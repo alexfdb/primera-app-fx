@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * @author alexfdb
  * @version 1.0.0
  */
-public class DatabaseConnection {
+public class DatabaseManager {
 
     private String databasePath;
     private File file;
@@ -20,15 +20,12 @@ public class DatabaseConnection {
      * 
      * @throws SQLException error controlado.
      */
-    public DatabaseConnection() throws SQLException {
-
-        databasePath = "";
+    public DatabaseManager() throws SQLException {
+        databasePath = "src/main/resources/database.sql";
         file = new File(databasePath);
-
         if (!file.exists()) {
             throw new SQLException("No existe la base de datos: " + databasePath);
         }
-
     }
 
     /**
@@ -44,7 +41,6 @@ public class DatabaseConnection {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return this.connection;
     }
 
