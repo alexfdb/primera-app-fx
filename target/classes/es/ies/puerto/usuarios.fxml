@@ -13,7 +13,7 @@
             <Insets top="20.0" />
          </VBox.margin>
       </Text>
-      <Text fx:id="textLista" strokeType="OUTSIDE" strokeWidth="0.0" text="Lisa" />
+      <Text fx:id="textLista" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista" />
       <Button fx:id="buttonInicio" mnemonicParsing="false" onAction="#buttonInicioClick" text="Inicio" />
    </children>
 </VBox>
