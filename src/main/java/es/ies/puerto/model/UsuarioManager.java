@@ -47,6 +47,33 @@ public class UsuarioManager {
     }
 
     /**
+     * Inicio de sesion.
+     * @param nick nick del usuario a iniciarse.
+     * @param contrasenia contrasenia del usuario a iniciarse.
+     * @return retorna el usuario si este existe.
+     */
+    public Usuario inicio(String nick, String contrasenia) {
+        if (nick == null || nick.isBlank() || contrasenia == null || contrasenia.isBlank()) {
+            return null;
+        }
+        String sql = "SELECT * FROM Usuario WHERE nick = ? AND contrasenia = ?";
+        try (PreparedStatement pStatement = databaseManager.conectar().prepareStatement(sql)) {
+            pStatement.setString(1, nick);
+            pStatement.setString(2, contrasenia);
+            try (ResultSet rSet = pStatement.executeQuery()) {
+                if(rSet.next()) {
+                    String nombre = rSet.getString("nombre");
+                    String email = rSet.getString("email");
+                    return new Usuario(nick, contrasenia, nombre, email);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
      * Obtiene todos los usuarios.
      * 
      * @return retorna todos los usuarios.

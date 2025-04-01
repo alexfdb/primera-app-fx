@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.model.Usuario;
-import es.ies.puerto.model.UsuarioCrud;
 import es.ies.puerto.model.UsuarioManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,14 +39,12 @@ public class RegistroController {
     @FXML
     private Button buttonInicio;
 
-    private UsuarioCrud usuarioCrud;
     private UsuarioManager usuarioManager;
 
     /**
      * Constructor general.
      */
     public RegistroController() throws SQLException{
-        this.usuarioCrud = new UsuarioCrud();
         this.usuarioManager = new UsuarioManager();
     }
 

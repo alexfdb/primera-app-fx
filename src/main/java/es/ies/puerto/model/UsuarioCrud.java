@@ -35,24 +35,6 @@ public class UsuarioCrud extends JsonUtil {
     }
 
     /**
-     * Muestra un usuario de la lista.
-     * 
-     * @param usuario usuario a mostrar.
-     * @return retorna el usuario a mostrar.
-     */
-    public Usuario read(Usuario usuario) {
-        if (usuario == null || usuario.getEMail() == null || usuario.getEMail().isBlank()) {
-            return null;
-        }
-        for (Usuario u : usuarios) {
-            if (usuario.equals(u)) {
-                return u;
-            }
-        }
-        return null;
-    }
-
-    /**
      * Comprueba las credenciales al logearse.
      * 
      * @param nick     nick del usuario.

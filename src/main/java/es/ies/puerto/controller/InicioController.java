@@ -1,8 +1,10 @@
 package es.ies.puerto.controller;
 
+import java.sql.SQLException;
+
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.model.Usuario;
-import es.ies.puerto.model.UsuarioCrud;
+import es.ies.puerto.model.UsuarioManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,13 +33,13 @@ public class InicioController {
     @FXML
     private Button buttonRecuperar;
 
-    private UsuarioCrud usuarioCrud;
+    private UsuarioManager usuarioManager;
 
     /**
      * Constructor general.
      */
-    public InicioController() {
-        usuarioCrud = new UsuarioCrud();
+    public InicioController() throws SQLException {
+        usuarioManager = new UsuarioManager();
     }
 
     /**
@@ -52,7 +54,8 @@ public class InicioController {
             return;
         }
 
-        Usuario usuario = usuarioCrud.login(textFieldUsuario.getText(), passwordFieldContrasenia.getText());
+        Usuario usuario = usuarioManager.inicio(textFieldUsuario.getText(), passwordFieldContrasenia.getText());
+
         if (usuario != null) {
             try {
                 FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("perfil.fxml"));
