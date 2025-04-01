@@ -4,7 +4,6 @@ module es.ies.puerto {
     requires transitive java.sql;
     requires org.controlsfx.controls;
     requires transitive javafx.graphics;
-    requires com.fasterxml.jackson.databind;
 
     exports es.ies.puerto;
     exports es.ies.puerto.model;

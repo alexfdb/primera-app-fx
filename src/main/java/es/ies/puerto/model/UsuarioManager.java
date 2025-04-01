@@ -17,14 +17,16 @@ public class UsuarioManager {
 
     /**
      * Constructor general.
+     * 
      * @throws SQLException Si ocurre un error al conectar con la base de datos.
      */
-    public UsuarioManager() throws SQLException{
-            this.databaseManager = new DatabaseManager();
+    public UsuarioManager() throws SQLException {
+        this.databaseManager = new DatabaseManager();
     }
 
     /**
      * Crea un nuevo usuario.
+     * 
      * @param usuario usuario a crear.
      * @return retorna true si el usuario fue creado.
      */
@@ -48,7 +50,8 @@ public class UsuarioManager {
 
     /**
      * Inicio de sesion.
-     * @param nick nick del usuario a iniciarse.
+     * 
+     * @param nick        nick del usuario a iniciarse.
      * @param contrasenia contrasenia del usuario a iniciarse.
      * @return retorna el usuario si este existe.
      */
@@ -61,7 +64,7 @@ public class UsuarioManager {
             pStatement.setString(1, nick);
             pStatement.setString(2, contrasenia);
             try (ResultSet rSet = pStatement.executeQuery()) {
-                if(rSet.next()) {
+                if (rSet.next()) {
                     String nombre = rSet.getString("nombre");
                     String email = rSet.getString("email");
                     return new Usuario(nick, contrasenia, nombre, email);
@@ -71,6 +74,31 @@ public class UsuarioManager {
             e.printStackTrace();
         }
         return null;
+    }
+
+    /**
+     * Busca un email en la base de datos.
+     * 
+     * @param email email a buscar.
+     * @return retorna true si encontro el email.
+     */
+    public boolean buscarEmail(String email) {
+        if (email == null || email.isBlank()) {
+            return false;
+        }
+        String sql = "SELECT COUNT(*) FROM Usuario WHERE email = ?";
+        try (PreparedStatement pStatement = databaseManager.conectar().prepareStatement(sql)) {
+            pStatement.setString(1, email);
+            try (ResultSet rSet = pStatement.executeQuery()) {
+                if (rSet.next()) {
+                    int count = rSet.getInt(1);
+                    return count > 0;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     /**

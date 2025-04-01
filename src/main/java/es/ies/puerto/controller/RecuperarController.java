@@ -1,10 +1,11 @@
 package es.ies.puerto.controller;
 
+import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import es.ies.puerto.PrincipalApplication;
-import es.ies.puerto.model.UsuarioCrud;
+import es.ies.puerto.model.UsuarioManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -28,13 +29,13 @@ public class RecuperarController {
     @FXML
     private Button buttonInicio;
 
-    UsuarioCrud usuarioCrud;
+    UsuarioManager usuarioManager;
 
     /**
      * Constructor general.
      */
-    public RecuperarController() {
-        this.usuarioCrud = new UsuarioCrud();
+    public RecuperarController() throws SQLException {
+        this.usuarioManager = new UsuarioManager();
     }
 
     /**
@@ -52,7 +53,7 @@ public class RecuperarController {
             return;
         }
 
-        if (!usuarioCrud.serchEmail(textFieldIngresarEmail.getText())) {
+        if (!usuarioManager.buscarEmail(textFieldIngresarEmail.getText())) {
             textText.setText("El correo electrónico no esta registrado.");
             return;
         }
