@@ -24,6 +24,11 @@ public class UsuariosController {
     private List<Usuario> usuarios;
     private String usuariosString;
 
+    @FXML
+    public void initialize() {
+        mostrarUsuarios();
+    }
+
     /**
      * Constructor general.
      * @throws SQLException error controlado.
@@ -31,7 +36,7 @@ public class UsuariosController {
     public UsuariosController() throws SQLException {
         this.usuarioManager = new UsuarioManager();
         this.usuarios = usuarioManager.obtenerUsuarios();
-        mostrarUsuarios();
+        this.usuariosString = "";
     }
 
     /**
@@ -39,7 +44,7 @@ public class UsuariosController {
      */
     public void mostrarUsuarios() {
         for (Usuario usuario : usuarios) {
-            usuariosString += usuario.toString() ;
+            usuariosString += usuario.getNombre()+"\n" ;
         }
         textLista.setText(usuariosString);
     }

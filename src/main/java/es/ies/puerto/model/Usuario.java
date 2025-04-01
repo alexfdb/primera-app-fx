@@ -68,8 +68,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Nick: " + getNick() + ", Contraseña: " + getContrasenia() +
-                ", Nombre: " + getNombre() + ", EMail: " + getEMail();
+        return getNick() + getContrasenia() + getNombre() + getEMail();
     }
 
 }
