@@ -32,6 +32,8 @@ public class InicioController {
     private Button buttonRegistrar;
     @FXML
     private Button buttonRecuperar;
+    @FXML
+    private Button buttonUsuarios;
 
     private UsuarioManager usuarioManager;
 
@@ -100,6 +102,24 @@ public class InicioController {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("recuperar.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 250, 400);
+            Stage stage = (Stage) buttonRecuperar.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Cambia a la pantalla de usuarios.
+     */
+    @FXML
+    protected void buttonUsuariosClick() {
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("usuarios.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 250, 400);
             Stage stage = (Stage) buttonRecuperar.getScene().getWindow();
             stage.setScene(scene);

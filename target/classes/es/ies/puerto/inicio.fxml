@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="250.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.InicioController" stylesheets="@style.css">
+<VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="250.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.InicioController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -21,4 +21,5 @@
    <Separator prefWidth="200.0" />
    <Button fx:id="buttonRegistrar" mnemonicParsing="false" onAction="#buttonRegistrarClick" text="Registrar" />
    <Button fx:id="buttonRecuperar" mnemonicParsing="false" onAction="#buttonRecuperarClick" text="Recuperar" />
+   <Button fx:id="buttonUsuarios" mnemonicParsing="false" onAction="#buttonUsuariosClick" text="Usuarios" />
 </VBox>
