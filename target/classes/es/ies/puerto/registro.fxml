@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="250.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.RegistroController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="250.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.RegistroController" stylesheets="@style.css">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar" />
       <TextField fx:id="textFiledIngresarUsuario" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Ingresar Usuario" />
