@@ -52,6 +52,7 @@ public class UsuariosController {
     /**
      * Cambia a la pantalla de inicio.
      */
+    @FXML
     public void buttonInicioClick() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("inicio.fxml"));

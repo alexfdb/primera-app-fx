@@ -29,7 +29,7 @@ public class RecuperarController {
     @FXML
     private Button buttonInicio;
 
-    UsuarioManager usuarioManager;
+    private UsuarioManager usuarioManager;
 
     /**
      * Constructor general.
