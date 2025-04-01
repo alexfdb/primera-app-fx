@@ -9,15 +9,41 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class UsuarioManager {
 
     private DatabaseManager databaseManager;
 
     /**
-     * Construcor vacio.
+     * Constructor general.
+     * @throws SQLException Si ocurre un error al conectar con la base de datos.
      */
-    public UsuarioManager() {
+    public UsuarioManager() throws SQLException{
+            this.databaseManager = new DatabaseManager();
+    }
+
+    /**
+     * Crea un nuevo usuario.
+     * @param usuario usuario a crear.
+     * @return retorna true si el usuario fue creado.
+     */
+    public boolean crearUsuario(Usuario usuario) {
+        if (usuario == null || usuario.getEMail() == null || usuario.getEMail().isBlank()) {
+            return false;
+        }
+        String sql = "INSERT INTO Usuario (nick, contrasenia, nombre, email) VALUES (?, ?, ?, ?)";
+        try (PreparedStatement pStatement = databaseManager.conectar().prepareStatement(sql)) {
+            pStatement.setString(1, usuario.getNick());
+            pStatement.setString(2, usuario.getContrasenia());
+            pStatement.setString(3, usuario.getNombre());
+            pStatement.setString(4, usuario.getEMail());
+            int rowsAffected = pStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     /**
@@ -26,7 +52,7 @@ public class UsuarioManager {
      * @return retorna todos los usuarios.
      * @throws SQLException error controlado.
      */
-    public ArrayList<Usuario> obtenerUsuarios() throws SQLException {
+    public List<Usuario> obtenerUsuarios() throws SQLException {
         ArrayList<Usuario> usuarios = new ArrayList<>();
         String sql = "SELECT * FROM Usuario";
         try (PreparedStatement sentencia = databaseManager.conectar().prepareStatement(sql);

@@ -21,7 +21,7 @@ public class DatabaseManager {
      * @throws SQLException error controlado.
      */
     public DatabaseManager() throws SQLException {
-        databasePath = "src/main/resources/database.sql";
+        databasePath = "src\\main\\resources\\usuarios.db";
         file = new File(databasePath);
         if (!file.exists()) {
             throw new SQLException("No existe la base de datos: " + databasePath);

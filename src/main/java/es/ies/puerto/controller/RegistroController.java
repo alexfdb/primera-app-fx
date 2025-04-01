@@ -1,11 +1,13 @@
 package es.ies.puerto.controller;
 
+import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.model.Usuario;
 import es.ies.puerto.model.UsuarioCrud;
+import es.ies.puerto.model.UsuarioManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -39,12 +41,14 @@ public class RegistroController {
     private Button buttonInicio;
 
     private UsuarioCrud usuarioCrud;
+    private UsuarioManager usuarioManager;
 
     /**
      * Constructor general.
      */
-    public RegistroController() {
+    public RegistroController() throws SQLException{
         this.usuarioCrud = new UsuarioCrud();
+        this.usuarioManager = new UsuarioManager();
     }
 
     /**
@@ -71,7 +75,7 @@ public class RegistroController {
                 textFiledIngresarNombre.getText(),
                 textFiledIngresarEmail.getText());
 
-        usuarioCrud.create(usuario);
+        usuarioManager.crearUsuario(usuario);
 
         textText.setText("Registrado correctamente");
     }
